@@ -1,0 +1,1 @@
+- masonのlogは`~/.local/state/nvim/mason.log`
