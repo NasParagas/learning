@@ -9,6 +9,7 @@ inspired by https://github.com/amitness/learning
 |Format|Category|Resource|Progress|
 |---|---|---|---|
 |Book|Linux|入門モダンLinux|📖|
+|Book|Linux|Binary Hacks Rebooted|📚|
 | |自作|作って学ぶOSの仕組み|📚|
 
 
@@ -20,6 +21,7 @@ inspired by https://github.com/amitness/learning
 |Book|Rust|プログラミングRust 第2版(O'reilly)| 📖 |[code](https://github.com/NasParagas/programming-rust)|
 | | |Rustの練習帳(O'reilly)| 📚 | |
 | |C++|プログラミングC++ 第4版| 📚 | |
+| |自作|Rustで作るプログラミング言語| 📚 | |
 
 
 ## Tools
