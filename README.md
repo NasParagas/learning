@@ -9,6 +9,7 @@ inspired by https://github.com/amitness/learning
 |Format|Category|Resource|Progress|
 |---|---|---|---|
 |Book|Linux|入門モダンLinux|📖|
+|Book|Linux|Binary Hacks Rebooted|📚|
 | |自作|作って学ぶOSの仕組み|📚|
 
 
