@@ -6,11 +6,11 @@ inspired by https://github.com/amitness/learning
 ## OS
 
 
-|Format|Category|Resource|Progress|
-|---|---|---|---|
-|Book|Linux|入門モダンLinux|📖|
-|Book|Linux|Binary Hacks Rebooted|📚|
-| |自作|作って学ぶOSの仕組み|📚|
+|Format|Category|Resource|Progress|repo|
+|---|---|---|---|---|
+|Book|Linux|入門モダンLinux|📖|[memo](https://github.com/NasParagas/learning-modern-linux.git)|
+| | |Binary Hacks Rebooted|📖|[memo](https://github.com/NasParagas/binary-hacks-rebooted.git)|
+| |自作|作って学ぶOSの仕組み|📚| |
 
 
 
@@ -18,7 +18,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Rust|プログラミングRust 第2版(O'reilly)| 📖 |[code](https://github.com/NasParagas/programming-rust)|
+|Book|Rust|プログラミングRust 第2版(O'reilly)| 📖 |[memo&code](https://github.com/NasParagas/programming-rust)|
 | | |Rustの練習帳(O'reilly)| 📚 | |
 | |C++|プログラミングC++ 第4版| 📚 | |
 | |自作|Rustで作るプログラミング言語| 📚 | |
