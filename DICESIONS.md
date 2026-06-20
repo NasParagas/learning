@@ -4,21 +4,28 @@
 
 ## git関連の決め事
 
-### repositoryの境界
+### repositoryをどう分けるか
 
-- 以下の場合はrepositoryを分ける
-  - 技術書等の写経
-    - このコードは再利用するものではないため
-  - ツールチェイン(cargo, uv等)
-    - LSPやbuild toolを機能させるため
-    - gitignoreを綺麗にするため
-    - ただし技術書写経のrepositoryを除く
+- 一つ成果物として何かができる場合は単独のrepositoryにする
+  - [neovim plugin](https://github.com/NasParagas/random-key-tips.nvim)とか
+    - 続き作らなくちゃな...
+- 技術書の写経は一つのrepositoryで管理
+  - `book-study`
 
 ### commit message
 
-- `add: ~~~`, `#2 fix: ~~~`等とする
+- `add: ~~~`, `fix: #<issue-num> ~~~`等とする
 
-## 知識の集約
+### 決めかねていること
+
+- PRやissueのdescriptionの形式
+
+## 恒久的なmemo
 
 - `learning/notes`へ
 
+## 写経用のrepoのmemoにはどこまで書くか
+
+- 本をやっている時点ではあまり記述を深掘りしすぎないようにする
+  - いつまでも進まないので...
+  - 細かい内容は`learning/memo`に入れるようにする
