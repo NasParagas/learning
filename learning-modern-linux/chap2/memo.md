@@ -312,10 +312,74 @@ Hugetlb:               0 kB
   - データ転送を担う
 - IP
   - アドレスに基づいたマシン間の通信を担う
+- HTTPやSSHなどのアプリケーション層のプロトコルはユーザ空間で実装される
 
 詳しくはまた後ほど
 
 ## ファイルシステム
+
+ファイルシステムにはいくつか種類がある
+
+- ext4
+- btrfs
+- NTFS
+
+(TODO: 何が違う？)  
+
+- **VFS(Virtual File System)**
+  - 異なるファイルシステムが共存できるように導入された
+  - 上位層(ユーザ空間に近い側)
+    - `open`,`close`,`read`,`write`等の共有APIで抽象化
+  - 下位層
+    - 与えられたファイルシステムに対して、抽象化のためのプラグインを提供する
+
+詳しくは後ほど
+
+## デバイスドライバ
+
+カーネルで動作する小規模なコード。種々のハードウェアや`/dev/pts/`下の擬似端末のようなデバイスを制御する  
+(TODO: `/dev/pts`しらない)  
+デバイスドライバとカーネルコンポーネントの相関図↓
+
+![map](https://makelinux.github.io/kernel/map/LKM63_512.png)
+
+![map_zoom](https://makelinux.github.io/kernel/map/LKM63_zoom.png)
+
+```sh
+# Linuxシステム上のデバイスを確認
+ls -al /sys/devices
+total 0
+drwxr-xr-x 15 root root 0 Jun 22 07:49 .
+dr-xr-xr-x 13 root root 0 Jun 22 07:49 ..
+drwxr-xr-x  5 root root 0 Jun 22 07:49 LNXSYSTM:00
+drwxr-xr-x  3 root root 0 Jun 22 07:49 breakpoint
+...
+drwxr-xr-x  4 root root 0 Jun 22 07:49 uprobe
+drwxr-xr-x 20 root root 0 Jun 22 07:49 virtual
+
+# マウントされているデバイス一覧
+mount
+tmpfs on /run type tmpfs (rw,nosuid,nodev,size=692388k,nr_inodes=819200,mode=755,inode64)
+/dev/vda2 on / type ext4 (rw,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,size=900928k,nr_inodes=225232,mode=755,inode64)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64,usrquota)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=600,ptmxmode=000)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+...
+none on /run/credentials/serial-getty@ttyAMA0.service type tmpfs (ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=346192k,nr_inodes=86548,mode=700,uid=1000,gid=1000,inode64)
+portal on /run/user/1000/doc type fuse.portal (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+nsfs on /run/snapd/ns/prompting-client.mnt type nsfs (rw)
+```
+
+---
+
+ここまででLinuxカーネルのコンポーネントは網羅
+
+---
+
+## システムコール
+
 
 
 ## (本には書かれていないけど調べてたことのメモ)
