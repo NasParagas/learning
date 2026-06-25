@@ -18,7 +18,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [█░░░░░░░░░] 9% |[memo&code](https://github.com/NasParagas/book-study/tree/main/programming-rust)|
+|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [█░░░░░░░░░] 9%  |[memo&code](https://github.com/NasParagas/book-study/tree/main/programming-rust)|
 | | |Rustの練習帳(O'reilly)|  | |
 | |C++|プログラミングC++ 第4版|  | |
 | |自作|Rustで作るプログラミング言語| 026/370 [█░░░░░░░░░] 7%  |[memo&code](https://github.com/NasParagas/book-study/tree/main/creating-programming-lang-in-rust)|
