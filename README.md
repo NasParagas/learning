@@ -81,4 +81,10 @@ inspired by https://github.com/amitness/learning
 |E-book|韓国語|これならわかる韓国語文法| | |
 
 
+## 電子工作
+|Format|Category|Resource|Progress|repo|
+|---|---|---|---|---|
+|Book| |電子工作入門以前| 120/319 [███░░░░░░░] 34% | |
+| | |ラズパイPico完全ガイド| 68/351 [██░░░░░░░░] 19% | |
+
 
