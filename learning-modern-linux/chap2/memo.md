@@ -36,53 +36,87 @@ Kernelは全てのコア機能を提供するが、それ自体はOSではなく
 BIOSからHWの情報を取得する
 
 ```sh
-nas@nas-QEMU-Virtual-Machine:~/ws/learning-modern-linux/chap2$ dmidecode >> memo.md 2>&1
+sudo dmidecode
 # dmidecode 3.6
-# No SMBIOS nor DMI entry point found, sorry.
-# dmidecode 3.6
-/sys/firmware/dmi/tables/smbios_entry_point: Permission denied
-# No SMBIOS nor DMI entry point found, sorry.
+Getting SMBIOS data from sysfs.
+SMBIOS 3.3.0 present.
+Table at 0x89D19000.
 
-nas@nas-QEMU-Virtual-Machine:~/ws/learning-modern-linux/chap2$ lscpu >> memo.md 2>&1
-Architecture:                            aarch64
-CPU op-mode(s):                          64-bit
-Byte Order:                              Little Endian
-CPU(s):                                  4
-On-line CPU(s) list:                     0-3
-Vendor ID:                               Apple
-Model name:                              -
-Model:                                   0
-Thread(s) per core:                      1
-Core(s) per socket:                      4
-Socket(s):                               1
-Stepping:                                0x0
-BogoMIPS:                                48.00
-Flags:                                   fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm sb paca pacg dcpodp flagm2 frint bf16 bti afp
-NUMA node(s):                            1
-NUMA node0 CPU(s):                       0-3
-Vulnerability Gather data sampling:      Not affected
-Vulnerability Ghostwrite:                Not affected
-Vulnerability Indirect target selection: Not affected
-Vulnerability Itlb multihit:             Not affected
-Vulnerability L1tf:                      Not affected
-Vulnerability Mds:                       Not affected
-Vulnerability Meltdown:                  Not affected
-Vulnerability Mmio stale data:           Not affected
-Vulnerability Old microcode:             Not affected
-Vulnerability Reg file data sampling:    Not affected
-Vulnerability Retbleed:                  Not affected
-Vulnerability Spec rstack overflow:      Not affected
-Vulnerability Spec store bypass:         Vulnerable
-Vulnerability Spectre v1:                Mitigation; __user pointer sanitization
-Vulnerability Spectre v2:                Mitigation; CSV2, but not BHB
-Vulnerability Srbds:                     Not affected
-Vulnerability Tsa:                       Not affected
-Vulnerability Tsx async abort:           Not affected
-Vulnerability Vmscape:                   Not affected
+Handle 0x0000, DMI type 0, 26 bytes
+BIOS Information
+        Vendor: American Megatrends International, LLC.
+        Version: 1.L8
+        Release Date: 06/23/2021
+        Address: 0xF0000
+        Runtime Size: 64 kB
+        ROM Size: 32 MB
+        Characteristics:
+                PCI is supported
+                BIOS is upgradeable
+...
+
+Handle 0x008C, DMI type 14, 8 bytes
+Group Associations
+        Name: $MEI
+        Items: 1
+                0x0000 (OEM-specific)
+
+Handle 0x008D, DMI type 219, 106 bytes
+OEM-specific Type
+        Header and Data:
+                DB 6A 8D 00 01 04 01 55 02 00 90 06 01 85 39 20
+                00 00 00 00 40 00 00 00 00 00 00 00 00 00 00 02
+                FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+                FF FF FF FF FF FF FF FF 03 00 00 00 80 00 00 00
+                00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+                00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+                00 00 00 00 00 00 00 00 00 00
+        Strings:
+                MEI1
+                MEI2
+                MEI3
+                MEI4
+
+Handle 0x008E, DMI type 136, 6 bytes
+OEM-specific Type
+        Header and Data:
+                88 06 8E 00 00 00
+
+Handle 0x008F, DMI type 14, 23 bytes
+Group Associations
+        Name: Firmware Version Info
+        Items: 6
+                0x0049 (OEM-specific)
+                0x004A (OEM-specific)
+                0x004B (OEM-specific)
+                0x004C (OEM-specific)
+                0x004D (OEM-specific)
+                0x005E (OEM-specific)
+
+Handle 0x0090, DMI type 127, 4 bytes
+End Of Table
+
+
+lscpu
+アーキテクチャ:                        x86_64
+  CPU 操作モード:                      32-bit, 64-bit
+  アドレスサイズ:                      39 bits physical, 48 bits virtual
+  バイト順序:                          Little Endian
+CPU:                                   16
+  オンラインになっている CPU のリスト: 0-15
+ベンダー ID:                           GenuineIntel
+  モデル名:                            11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz
+    CPU ファミリー:                    6
+    モデル:                            167
+    コアあたりのスレッド数:            2
+    ソケットあたりのコア数:            8
+    ソケット数:                        1
+    ステッピング:                      1
+    CPU スケーリング MHz:              17%
+    CPU 最大 MHz:                      4900.0000
+    CPU 最小 MHz:                      800.0000
+...
 ```
-
-このCPUはaarch64==arm64  
-(VM上だからmodel nameは書いてないのかな？)
 
 CPU Architectureは主に以下の種類がある([各kernelのdoc](https://docs.kernel.org/index.html)も参照)
 
@@ -267,13 +301,13 @@ cat /proc/sys/vm/overcommit_memory
 
 ```sh
 lscpu -C
-NAME ONE-SIZE ALL-SIZE WAYS TYPE        LEVEL SETS PHY-LINE COHERENCY-SIZE
-L1d                         Data            1               
-L1i                         Instruction     1               
-L2                          Unified         2   
+NAME ONE-SIZE ALL-SIZE WAYS TYPE        LEVEL  SETS PHY-LINE COHERENCY-SIZE
+L1d       48K     384K   12 Data            1    64        1             64
+L1i       32K     256K    8 Instruction     1    64        1             64
+L2       512K       4M    8 Unified         2  1024        1             64
+L3        16M      16M   16 Unified         3 16384        1             64
 ```
 
-(TODO: VM上だから何も出なかったのかな...)
 
 - `/proc/meminfo`より、メモリ関連の情報を確認できる
 
@@ -380,21 +414,39 @@ nsfs on /run/snapd/ns/prompting-client.mnt type nsfs (rw)
 
 ## システムコール
 
+- CPUには特権レベル(カーネルモード、スーパーバイザモード)があり、ユーザ空間のプログラムは特権命令(HWへの直接の命令、ページテーブル変更など)を実行できない。ので、カーネルにそれを任せる必要があり、その仕組みをsyscallという
 - 例えばterminalで`touch test`とした場合、最終的にはsys callが呼ばれる
 - system callの呼び出しは以下のような工程に分けられる
   - カーネルは`syscall.h`とアーキテクチャ依存を示すファイルで定義された、`sys_call_table`変数で定義されているメモリ上の関数ポインタの配列。system callとhandlerが登録されている
   - `system_call()`によって、HWコンテキスト(TODO:??)をスタックに保存し、チェック(トレースが行われているかどうか)(TODO:??)をして、`sys_call_table`内のsystem call番号のindexが指すhandlerへジャンプする
   - `sysexit`によってsystem callが終了すると、ラッパーライブラリ(TODO:??)はHWコンテキストを復元し、プログラムの実行はユーザ空間で再開される
 - カーメルモードとユーザ空間モードの切り替えは時間のかかる処理
-- `strace`によって、system callの呼ばれ方？を可視化できる
+- `strace`によって、system callの呼ばれ方？を可視化できる。`-c`で時間等を計測できる
+
+```sh
+nas@nas-Z590-S01:~/work/book-study/learning-modern-linux$ strace ls
+# syscall`execve`は、`/usr/bin/ls`を実行し、シェルプロセスと入れ替えられる
+execve("/usr/bin/ls", ["ls"], 0x7fffba2f89d0 /* 37 vars */) = 0
+# syscall`brk`はメモリの割り当て。例えばC言語の`malloc`は、確保するメモリの量に応じて`brk`か`mmap`syscallを呼ぶ
+...
+brk(NULL)                               = 0x653841a67000
+# `access`sys callは、processが特定のfileに対してアクセス許可があるかを確認する
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (そのようなファイルやディレクトリはありません)
+# `openat`は第二引数のファイルを第一引数のディレクトリファイルディスクリプタと第三引数のフラグでopenする
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+...
+# `read`は第一引数のファイルディスクリプタから第三引数のbyte分を第二引数(バッファ)に読みとる
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+```
+
+TODO: ちゃんとそれぞれの引数とかの意味を調べる
+
+https://filippo.io/linux-syscall-table/ に各system callについて書かれているので参照
+
 
 
 
 ## (本には書かれていないけど調べてたことのメモ)
-
-### system call
-
-CPUには特権レベルがあり、ユーザ空間のプログラムは特権命令(HWへの直接の命令、ページテーブル変更など)を実行できない。ので、カーネルにそれを任せる必要があり、その仕組みをsyscallという  
 
 ### /proc/
 
