@@ -1,0 +1,7 @@
+- **Shell**はterminal内で動作するもの
+  - terminal: xterm, Gnome terminaor, kitty, warp, wezterm...
+    - terminal == terminal emulator == soft terminal
+  - shell: sh, bash, fish...
+- `echo $0`,`echo $SHELL`等で自分がどのshellを使っているかを確認できる
+  - (TODO: $0でなんで取れる？)
+- 
