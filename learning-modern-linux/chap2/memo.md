@@ -380,6 +380,14 @@ nsfs on /run/snapd/ns/prompting-client.mnt type nsfs (rw)
 
 ## システムコール
 
+- 例えばterminalで`touch test`とした場合、最終的にはsys callが呼ばれる
+- system callの呼び出しは以下のような工程に分けられる
+  - カーネルは`syscall.h`とアーキテクチャ依存を示すファイルで定義された、`sys_call_table`変数で定義されているメモリ上の関数ポインタの配列。system callとhandlerが登録されている
+  - `system_call()`によって、HWコンテキスト(TODO:??)をスタックに保存し、チェック(トレースが行われているかどうか)(TODO:??)をして、`sys_call_table`内のsystem call番号のindexが指すhandlerへジャンプする
+  - `sysexit`によってsystem callが終了すると、ラッパーライブラリ(TODO:??)はHWコンテキストを復元し、プログラムの実行はユーザ空間で再開される
+- カーメルモードとユーザ空間モードの切り替えは時間のかかる処理
+- `strace`によって、system callの呼ばれ方？を可視化できる
+
 
 
 ## (本には書かれていないけど調べてたことのメモ)
