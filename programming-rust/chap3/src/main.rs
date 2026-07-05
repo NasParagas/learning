@@ -81,4 +81,29 @@ fn main() {
     // "hello"と言う書き方をすると、"コンパイル時にバイナリへ埋め込まれた固定文字列への参照"となり、所有権を持たないため&strとなる...?
     let tuple_exp: (&str, i32, bool) = ("hello", 5, true);
     assert_eq!(tuple_exp.0, "hello");
+    let txt = "hello world";
+    let (head, tail) = txt.split_at(6);
+    assert_eq!(head, "hello ");
+    assert_eq!(tail, "world");
+
+    // 参照
+    let mut num = 30;
+    let mut num2 = 100;
+    println!("{}", num);
+    let ref_num = &mut num;
+    *ref_num = 40;
+    // println!("{}", num);  // 可変参照が作られているので`ref_num`経由でしかアクセスできずエラー
+    println!("{}", ref_num);
+    println!("{}", num); // ここであればこれ以降`ref_num`が使われていないのでok。どこかで使うとまたエラーになる
+    let ref2_num = &num;
+    println!("{}", num); // 共有参照であれば問題なくアクセスできる
+    // ref_num = &mut num2; // ref_numはmutableでないのでエラー
+    let mut ref3_num = &mut num;
+    println!("{}", ref3_num);
+    ref3_num = &mut num2;
+    println!("{}", ref3_num);
+
+    // Box
+    let t = (12, "eggs");
+    let b = Box::new(t);
 }
