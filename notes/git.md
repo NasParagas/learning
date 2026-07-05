@@ -147,5 +147,16 @@ git pull origin main --allow-unrelated-histories --no-rebase
 git push
 ```
 
+## repositoryの融合
 
+```sh
+cd repo-B  # 統合先のリポジトリ
+
+# リモートとして追加
+git remote add <name> <url-or-path>
+git fetch <name>
+
+# サブディレクトリとして取り込む(履歴も一緒に)
+git subtree add --prefix=repo-a-subdir repo-a-remote main
+```
 
