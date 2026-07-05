@@ -1,5 +1,6 @@
 # learning
-学んでいること、学んだこと・考えを記録するrepository
+
+本の写経とかメモとか
 
 inspired by https://github.com/amitness/learning
 
@@ -10,8 +11,8 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Linux|入門モダンLinux| 031/218 [█░░░░░░░░░] 14% |[memo](https://github.com/NasParagas/book-study/tree/main/learning-modern-linux)|
-| | |Binary Hacks Rebooted| 008/624 [░░░░░░░░░░] 1% |[memo](https://github.com/NasParagas/book-study/tree/main/binary-hacks-rebooted)|
+|Book|Linux|入門モダンLinux| 031/218 [###-----------------] 14% |[memo](https://github.com/NasParagas/book-study/tree/main/learning-modern-linux)|
+| | |Binary Hacks Rebooted| 008/624 [--------------------] 1% |[memo](https://github.com/NasParagas/book-study/tree/main/binary-hacks-rebooted)|
 | |自作|作って学ぶOSの仕組み|  | |
 
 
@@ -19,10 +20,10 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [█░░░░░░░░░] 9%  |[memo&code](https://github.com/NasParagas/book-study/tree/main/programming-rust)|
+|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [##------------------] 9% |[memo&code](https://github.com/NasParagas/book-study/tree/main/programming-rust)|
 | | |Rustの練習帳(O'reilly)|  | |
 | |C++|プログラミングC++ 第4版|  | |
-| |自作|Rustで作るプログラミング言語| 026/370 [█░░░░░░░░░] 7%  |[memo&code](https://github.com/NasParagas/book-study/tree/main/creating-programming-lang-in-rust)|
+| |自作|Rustで作るプログラミング言語| 026/370 [#-------------------] 7% |[memo&code](https://github.com/NasParagas/book-study/tree/main/creating-programming-lang-in-rust)|
 
 
 ### Tools
@@ -71,7 +72,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
-|Book| |システム思考の世界へ| 002/200 [░░░░░░░░░░] 1% |
+|Book| |システム思考の世界へ| 002/200 [--------------------] 1% |
 
 
 ## Math
@@ -95,7 +96,7 @@ inspired by https://github.com/amitness/learning
 ### 電子工作
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book| |電子工作入門以前| 120/319 [███░░░░░░░] 34% | |
-| | |ラズパイPico完全ガイド| 89/351 [███░░░░░░░] 25% | |
+|Book| |電子工作入門以前| 120/319 [########------------] 38% | |
+| | |ラズパイPico完全ガイド| 089/351 [#####---------------] 25% | |
 
 
