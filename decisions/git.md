@@ -1,10 +1,5 @@
-# decisions
 
-様々な決め事を記録する
-
-## git関連の決め事
-
-### repositoryをどう分けるか
+## repositoryをどう分けるか
 
 - 一つ成果物として何かができる場合は単独のrepositoryにする
   - [neovim plugin](https://github.com/NasParagas/random-key-tips.nvim)とか
@@ -12,14 +7,10 @@
 - 技術書の写経は一つのrepositoryで管理
   - `book-study`
 
-### commit message
+## commit message
 
 - `add: ~~~`, `fix: #<issue-num> ~~~`等とする
-
-### 決めかねていること
-
-- PRやissueのdescriptionの形式
-
+-
 ## 恒久的なmemo
 
 - `learning/notes`へ
@@ -28,4 +19,10 @@
 
 - 本をやっている時点ではあまり記述を深掘りしすぎないようにする
   - いつまでも進まないので...
-  - 細かい内容は`learning/memo`に入れるようにする
+  - 細かい内容は`learning/notes`に入れるようにする
+
+## 決めかねていること
+
+- PRやissueのdescriptionの形式
+
+
