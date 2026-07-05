@@ -3,18 +3,19 @@
 
 inspired by https://github.com/amitness/learning
 
-## OS
+## <なんて分類しよう>
+
+### OS
 
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Linux|入門モダンLinux| 019/218 [█░░░░░░░░░] 9% |[memo](https://github.com/NasParagas/book-study/tree/main/learning-modern-linux)|
+|Book|Linux|入門モダンLinux| 031/218 [█░░░░░░░░░] 14% |[memo](https://github.com/NasParagas/book-study/tree/main/learning-modern-linux)|
 | | |Binary Hacks Rebooted| 008/624 [░░░░░░░░░░] 1% |[memo](https://github.com/NasParagas/book-study/tree/main/binary-hacks-rebooted)|
 | |自作|作って学ぶOSの仕組み|  | |
 
 
-
-## Programming Language
+### Programming Language
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
@@ -24,25 +25,53 @@ inspired by https://github.com/amitness/learning
 | |自作|Rustで作るプログラミング言語| 026/370 [█░░░░░░░░░] 7%  |[memo&code](https://github.com/NasParagas/book-study/tree/main/creating-programming-lang-in-rust)|
 
 
-## Tools
+### Tools
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
 |Book|Vim| 実践Vim |  | |
 
 
-## Software Design
+### Software Design
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
 |Book| | リーダブルコード |  |
 
 
-## Network
+### Network
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
 |Book| |TCP/IP ネットワークコンピューティング入門 第4版|  |
+
+
+### Data Science
+
+|Format|Category|Resource|Progress|
+|---|---|---|---|
+|Book| |拡散モデル データ生成技術の数理| |
+
+
+### Machine Learning
+
+|Format|Category|Resource|Progress|
+|---|---|---|---|
+|Book|自作|自作LLM入門| |
+
+
+### ML
+
+|Format|Category|Resource|Progress|repo|
+|---|---|---|---|---|
+|E-book|Pytorch&scikit-learn|Python 機械学習プログラミング| | |
+
+
+### その他
+
+|Format|Category|Resource|Progress|
+|---|---|---|---|
+|Book| |システム思考の世界へ| 002/200 [░░░░░░░░░░] 1% |
 
 
 ## Math
@@ -53,38 +82,20 @@ inspired by https://github.com/amitness/learning
 |E-book|確率論|統計学への確率論、その先へ| | | 
 
 
-## Data Science
-
-|Format|Category|Resource|Progress|
-|---|---|---|---|
-|Book| |拡散モデル データ生成技術の数理| |
-
-
-## Machine Learning
-
-|Format|Category|Resource|Progress|
-|---|---|---|---|
-|Book|自作|自作LLM入門| |
-
-
-## ML
-
-|Format|Category|Resource|Progress|repo|
-|---|---|---|---|---|
-|E-book|Pytorch&scikit-learn|Python 機械学習プログラミング| | |
-
-
 ## 外国語
+
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
 |E-book|韓国語|これならわかる韓国語文法| | |
 
 
-## 電子工作
+## Hardware
+
+### 電子工作
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
 |Book| |電子工作入門以前| 120/319 [███░░░░░░░] 34% | |
-| | |ラズパイPico完全ガイド| 68/351 [██░░░░░░░░] 19% | |
+| | |ラズパイPico完全ガイド| 89/351 [███░░░░░░░] 25% | |
 
 
