@@ -9,7 +9,7 @@
   - 予測を行う時に入力の様々な部分に選択的に注意を払うことができるアーキテクチャ
   - 詳細は後述
 
-![](../../../assets/2026-07-06-22-33-12.png)
+![](../../../assets/2026-07-07-07-32-55.png)
 
 - 人工知能の実装に使われるアルゴリズムは機械学習分野の焦点
   - ディープラーニングは機械学習のサブセット
@@ -41,10 +41,10 @@
 - decoder
   - encodeされたベクトルを受け取り、テキストを生成するa
 
-![](../../../assets/2026-07-06-23-49-56.png)
+![](../../../assets/2026-07-07-07-34-30.png)
 
 - BERT(Biderectional Encoder Representations from Transformer)
-  - transformerのencoderのみ？(TODO:本当？)
+  - transformerのencoder部分のみ
   - マスクされた単語の予測に特化
   - 感情予測や文書分類といったテキスト分類タスクに適している
   - 例: Xが有害なコンテンツの検出に使用
@@ -52,13 +52,49 @@
   - tansformerのデコーダ部分に焦点を当てている
   - テキストの生成を必要とするタスク向けに設計されている
 
-![](../../../assets/2026-07-06-23-55-57.png)
 
 - 注意
   - transformerはvision分野にも利用できる
   - RNNやCNNに基づくLLMもある
     - これらは計算効率の向上を目的として使用されることが多い
     - が、これらのモデルがtransformerベースのLLMの能力に対抗できるかどうか不明(TODO:調査)
-    -
+
+## 大規模データセット
+
+- GPT-3の事前学習に使われたデータセット
+  - CommonCrawl(filtering済み)
+  - WebText2
+  - Books1
+  - Books2
+  - Wikipedia
+- token
+  - モデルが読み取るテキストの単位
+  - データセットに含まれているtokenの数は、テキストに含まれている単語や句読点の数にほぼ相当する
+  - (TODO: あんまり理解できてない)
+
+## 詳説: GPT architecture
+
+- もともとは[Improving Language Understanding by Generative Pre-Training](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)で紹介された
+- GPT-3はこのモデルのスケールアップバージョン
+  - 多くのパラメータ、より大規模なデータセット
+  - ChatGPTで提供されていたモデルは、Instruct GPTの手法を使って、大規模な指示データセットでGPT-3をfine-tuningしていた
+- 次単語予測タスク
+  - 自己教師あり学習
+  - 文章の次の単語をモデルが予測するラベルとして使用でき、明示的なラベル付けの必要がない
+- GPTはdecoder onlyで、単語を一つ一つ予測してテキスト生成を行うため、自己回帰モデルの一種
+  - 自己回帰モデル
+    - 過去の出力を未来の予測値として取り込む
+    - 一貫性が良くなる
+
+![](../../../assets/2026-07-07-07-54-38.png)
+
+- Transformer層が96個あり、パラメーター数は1750B
+- 創発的行動(emergent behavier)
+  - 明示的な訓練を受けていないタスクを実行する能力。多様なコンテキストで膨大な量の多言語データに触れる中で自然に生じるもの
+
+---
+
+![](../../../assets/2026-07-07-08-15-09.png)
+
 
 
