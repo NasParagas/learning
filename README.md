@@ -11,8 +11,8 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Linux|入門モダンLinux| 031/218 [###-----------------] 14% |[memo](https://github.com/NasParagas/book-study/tree/main/learning-modern-linux)|
-| | |Binary Hacks Rebooted| 008/624 [--------------------] 1% |[memo](https://github.com/NasParagas/book-study/tree/main/binary-hacks-rebooted)|
+|Book|Linux|入門モダンLinux| 031/218 [###-----------------] 14% | |
+| | |Binary Hacks Rebooted| 008/624 [--------------------] 1% | |
 | |自作|作って学ぶOSの仕組み|  | |
 
 
@@ -20,10 +20,10 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [##------------------] 9% |[memo&code](https://github.com/NasParagas/book-study/tree/main/programming-rust)|
+|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [##------------------] 9% | |
 | | |Rustの練習帳(O'reilly)|  | |
 | |C++|プログラミングC++ 第4版|  | |
-| |自作|Rustで作るプログラミング言語| 026/370 [#-------------------] 7% |[memo&code](https://github.com/NasParagas/book-study/tree/main/creating-programming-lang-in-rust)|
+| |自作|Rustで作るプログラミング言語| 026/370 [#-------------------] 7% | | 
 
 
 ### Tools
@@ -58,7 +58,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
-|Book|自作|自作LLM入門| 011/356 [#-------------------] 3% |
+|Book|自作|自作LLM入門| 017/356 [#-------------------] 5% |
 
 
 ### ML
