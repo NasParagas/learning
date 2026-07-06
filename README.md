@@ -8,7 +8,6 @@ inspired by https://github.com/amitness/learning
 
 ### OS
 
-
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
 |Book|Linux|入門モダンLinux| 031/218 [###-----------------] 14% | |
@@ -20,9 +19,9 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|repo|
 |---|---|---|---|---|
-|Book|Rust|プログラミングRust 第2版(O'reilly)| 054/632 [##------------------] 9% | |
+|Book|Rust|プログラミングRust 第2版(O'reilly)| 059/632 [##------------------] 9% | |
 | | |Rustの練習帳(O'reilly)|  | |
-| |C++|プログラミングC++ 第4版|  | |
+| |C++|プログラミングC++ 第4版| 000/1286 | |
 | |自作|Rustで作るプログラミング言語| 026/370 [#-------------------] 7% | | 
 
 
