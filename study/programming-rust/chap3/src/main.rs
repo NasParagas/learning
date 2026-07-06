@@ -106,4 +106,23 @@ fn main() {
     // Box
     let t = (12, "eggs");
     let b = Box::new(t);
+
+    // 配列
+    let a: [u32; 6] = [1, 2, 3, 4, 5, 5];
+    let b = ["aa", "bb"];
+    let c = [0; 1000];
+    assert_eq!(a[3], 4);
+    assert_eq!(b.len(), 2);
+
+    // vector
+    let mut v = vec![2, 3, 5];
+    v.push(10);
+    assert_eq!(v.iter().product::<i32>(), 300);
+    v.pop();
+    assert_eq!(v.iter().product::<i32>(), 30);
+    fn new_pixel_buffer(rows: usize, cols: usize) -> Vec<u8> {
+        vec![0; rows * cols]
+    }
+    let v: Vec<i32> = (0..5).collect();
+    assert_eq!(v, [0, 1, 2, 3, 4]);
 }
