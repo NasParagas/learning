@@ -58,7 +58,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
-|Book|自作|自作LLM入門| |
+|Book|自作|自作LLM入門| 011/356 [#-------------------] 3% |
 
 
 ### ML
@@ -72,7 +72,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
-|Book| |システム思考の世界へ| 002/200 [--------------------] 1% |
+|Book| |システム思考の世界へ| 016/200 [##------------------] 8% |
 
 
 ## Math
