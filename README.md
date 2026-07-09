@@ -57,7 +57,7 @@ inspired by https://github.com/amitness/learning
 
 |Format|Category|Resource|Progress|
 |---|---|---|---|
-|Book|自作|自作LLM入門| 017/356 [#-------------------] 5% |
+|Book|自作|自作LLM入門| 034/356 [##------------------] 10% |
 
 
 ### ML
