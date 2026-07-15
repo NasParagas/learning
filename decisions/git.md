@@ -4,8 +4,6 @@
 - 一つ成果物として何かができる場合は単独のrepositoryにする
   - [neovim plugin](https://github.com/NasParagas/random-key-tips.nvim)とか
     - 続き作らなくちゃな...
-- 技術書の写経は一つのrepositoryで管理
-  - `book-study`
 
 ## commit message
 
