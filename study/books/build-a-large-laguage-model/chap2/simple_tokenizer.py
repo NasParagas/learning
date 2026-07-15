@@ -14,7 +14,9 @@ class SimpleTokenizerV1:
         # https://docs.python.org/3/library/stdtypes.html#str.strip
         # spaceと空文字削除
         preprocessed = [item.strip() for item in preprocessed if item.strip()]
-        preprocessed = [item if item in self.token_to_id else "<|unk|>" for item in preprocessed]
+        preprocessed = [
+            item if item in self.token_to_id else "<|unk|>" for item in preprocessed
+        ]
         ids = [self.token_to_id[token] for token in preprocessed]
         return ids
 
@@ -63,10 +65,6 @@ def main():
     tokenizer = SimpleTokenizerV1(vocab)
     print(tokenizer.encode(text))
     print(tokenizer.decode(tokenizer.encode(text)))
-
-
-
-
 
 
 if __name__ == "__main__":
